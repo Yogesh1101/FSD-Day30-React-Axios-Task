@@ -2,6 +2,7 @@ import { TextField } from "@mui/material";
 import React, { useState } from "react";
 
 function Add({ onAddUser }) {
+  // First Initializing an empty data's for all field
   const [formData, setFormData] = useState({
     name: "",
     username: "",
@@ -10,6 +11,7 @@ function Add({ onAddUser }) {
     website: "",
   });
 
+  // Function to send the data to the onAddUser function in the App Component
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddUser(formData);
@@ -19,6 +21,7 @@ function Add({ onAddUser }) {
   return (
     <div className="container">
       <h1 className="sub-heading">ADD NEW USER</h1>
+      {/* Displaying a form to get all required details from the user */}
       <form onSubmit={handleSubmit}>
         <TextField
           required

@@ -13,6 +13,7 @@ function App() {
   const [editingUser, setEditingUser] = useState(null);
   const navigate = useNavigate();
 
+  // Fetching the user data from the Mock API
   useEffect(() => {
     axios
       .get(API_URL)
@@ -24,6 +25,7 @@ function App() {
       );
   }, []);
 
+  // Function to add new user data
   const addUser = (formData) => {
     axios
       .post(API_URL, formData)
@@ -36,6 +38,7 @@ function App() {
       });
   };
 
+  // Function to store the edited user data
   const editUser = (formData) => {
     axios
       .put(`${API_URL}/${editingUser.id}`, formData)
@@ -52,6 +55,7 @@ function App() {
       });
   };
 
+  // Function to delete the user 
   const deleteUser = (userId) => {
     axios
       .delete(`${API_URL}/${userId}`)
@@ -68,6 +72,7 @@ function App() {
   return (
     <div className="App container">
       <h1 className="main-heading">REACT AXIOS TASK</h1>
+      {/* Intitalized the routes to particular components */}
       <Routes>
         <Route
           path="/"

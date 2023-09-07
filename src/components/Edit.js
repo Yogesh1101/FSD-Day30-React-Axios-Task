@@ -16,6 +16,7 @@ function Edit({ user, onEditUser }) {
   return (
     <div className="container">
       <h1 className="sub-heading">EDIT USER</h1>
+      {/* Displaying all field for which the edit button is clicked */}
       <form onSubmit={handleSubmit}>
         <TextField
           required

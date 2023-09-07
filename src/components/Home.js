@@ -42,12 +42,15 @@ function Home({ users, onEditUser, onDeleteUser }) {
     <div>
       <div className="header">
         <h2 className="sub-heading">USER DETAILS</h2>
+        {/* It is to navigate to add page when this add button icon is clicked */}
         <Link to="/add">
           <Fab color="primary" aria-label="add">
             <AddIcon />
           </Fab>
         </Link>
       </div>
+      {/* All user data is displayed in the table format which is see to look */}
+      {/* Each user data is displayed with edit and delete button */}
       <TableContainer component={Paper} className="table-container">
         <Table>
           <TableHead>
